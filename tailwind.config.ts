@@ -1,15 +1,46 @@
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
-  content: [
+    darkMode: ['class'],
+    content: [
     './app/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
-    './pages/**/*.{js,ts,jsx,tsx}', // 如果有用 pages 資料夾
+    './pages/**/*.{js,ts,jsx,tsx}', 
   ],
   theme: {
-    extend: {},
+	container: {
+		center: true,
+		padding: '15px'
+	},
+	screens: {
+		sm: '640px',
+		md: '768px',
+		lg: '960px',
+		xl: '1200px',
+	},
+	fontFamily: {
+		primary: 'var(--font-jetbrainsMono)'
+	},
+  	extend: {
+  		borderRadius: {
+  			lg: 'var(--radius)',
+  			md: 'calc(var(--radius) - 2px)',
+  			sm: 'calc(var(--radius) - 4px)'
+  		},
+		colors: {
+			primary: 'hsl(220, 60%, 10%)',
+			textColor: 'hsl(220, 40%, 85%)',
+			highliteColor: 'hsl(220, 60%, 90%)',
+			importantColor: 'hsl(0, 70%, 50%)',
+			hoverColor: 'hsl(220, 60%, 55%)',
+			accent: {
+			DEFAULT: 'hsl(160, 100%, 50%)',
+			hover: 'hsl(160, 100%, 45%)'
+			}
+  		}
+  	}
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 }
 
 export default config

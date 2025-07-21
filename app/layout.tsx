@@ -1,11 +1,20 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Outfit, Ovo, Noto_Sans_TC} from 'next/font/google'
+import { Outfit, Ovo, Noto_Sans_TC, JetBrains_Mono} from 'next/font/google'
+
+// Components
+import Header from '@/components/Header'
 
 export const metadata: Metadata = {
   title: 'NekoNeko',
   description: 'This is a portfolio website.',
 }
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets:['latin'], 
+  weight:['100', '200', '300' ,'400' , '500', '600', '700', '800'],
+  variable: '--font-jetbrainsMono'
+})
 
 const outfit = Outfit({
   subsets:['latin'], 
@@ -24,15 +33,18 @@ const notoSansTC = Noto_Sans_TC({
   display: 'swap',
 })
 
-
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  // ${outfit.className} ${ovo.className} 
   return (
     <html lang="en">
-      <body className={`${outfit.className} ${ovo.className} antialiased`}>{children}</body>
+      <body className={jetbrainsMono.variable}>
+        <Header />
+        {children}
+      </body>
     </html>
   )
 }

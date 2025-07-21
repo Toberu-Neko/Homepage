@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-  font-family: Outfit;
+@layer base{
+  body{
+    @apply font-primary bg-primary text-textColor leading-loose;
+  }
 }
