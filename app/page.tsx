@@ -1,13 +1,14 @@
-'use client'
-import Image from 'next/image'
-import Link from 'next/link'
-import Navbar from '../components/ui/Navbar'
-import Header from '@/components/Header'
+import { Button } from "@/components/ui/button"
+import {FiDownload} from 'react-icons/fi'
 
-export default function Home() {
+const Home = () => {
   return (
-    <main>
-      Hello
-    </main>
+    <section className="h-full">
+      <div className="container mx-auto">
+        Homepage
+      </div>
+    </section>
   )
 }
+
+export default Home

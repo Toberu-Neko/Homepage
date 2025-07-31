@@ -31,7 +31,10 @@ const config: Config = {
 			primary: 'hsl(220, 60%, 10%)',
 			textColor: 'hsl(220, 40%, 85%)',
 			highlightColor: 'hsl(220, 60%, 75%)',
-			importantColor: 'hsl(0, 70%, 50%)',
+			importantColor: {
+				DEFAULT: 'hsl(0, 70%, 50%)',
+				hover: 'hsl(0, 70%, 45%)',
+			},
 			hoverColor: 'hsl(220, 60%, 55%)',
 			accent: {
 			DEFAULT: 'hsl(160, 100%, 50%)',
