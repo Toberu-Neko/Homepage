@@ -9,9 +9,9 @@ const Home = () => {
       <div className="container mx-auto h-full">
         <div className="flex flex-col items-center justify-between xl:flex-row xl:pt-8 xl:pb-24">
           {/*Text*/}
-          <div className="text-center xl:text-left">
+          <div className="text-center xl:text-left order-2 xl:order-none">
             <span className="text-xl">Game Developer</span>
-            <h1 className="h1 text-white">
+            <h1 className="h2 text-white">
               Hello, I'm <br /> <span className="text-hoverColor">Ching-Hua  Hsieh</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-textColor/90">
@@ -32,7 +32,7 @@ const Home = () => {
 
           </div>
           {/*Image*/}
-          <div>
+          <div className="order-1 xl:order-none mb-8 xl:mb-0">
             <Photo/>
           </div>
         </div>
