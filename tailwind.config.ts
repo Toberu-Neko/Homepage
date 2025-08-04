@@ -29,7 +29,10 @@ const config: Config = {
   		},
 		colors: {
 			primary: 'hsl(220, 60%, 10%)',
-			textColor: 'hsl(220, 40%, 85%)',
+			textColor: {
+				DEFAULT: 'hsl(220, 40%, 85%)',
+				secondary: 'hsl(220, 20%, 70%)',
+			},
 			highlightColor: 'hsl(220, 60%, 75%)',
 			importantColor: {
 				DEFAULT: 'hsl(0, 75%, 55%)',

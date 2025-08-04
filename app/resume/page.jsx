@@ -152,7 +152,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
 
-const resume = () => {
+const Resume = () => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -184,7 +184,7 @@ const resume = () => {
                 <h3 className="text-4xl font-bold">
                   {experience.title}
                 </h3>
-                <p className="max-w-[600px] text-textColor/85 mx-auto xl:mx-0">
+                <p className="max-w-[600px] text-textColor-secondary mx-auto xl:mx-0">
                   {experience.description}
                 </p>
                 <ScrollArea className="h-[400px]">
@@ -199,7 +199,7 @@ const resume = () => {
                       <div className="flex items-center gap-3">
                         {/* dot */}
                         <span className=" w-[6px] h-[6px] rounded-full bg-importantColor"></span>
-                        <p className="text-textColor/80">{item.company}</p>
+                        <p className="text-textColor-secondary">{item.company}</p>
                       </div>
                     </li>
                     )
@@ -208,17 +208,83 @@ const resume = () => {
                 </ScrollArea>
               </div>
             </TabsContent>
-            {/* Experience */}
+
+            {/* education */}
             <TabsContent value="education" className="w-full">
-              education
+              <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                <h3 className="text-4xl font-bold">
+                  {education.title}
+                </h3>
+                <p className="max-w-[600px] text-textColor-secondary mx-auto xl:mx-0">
+                  {education.description}
+                </p>
+                <ScrollArea className="h-[400px]">
+                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+                    {education.items.map((item, index) => {
+                    return (
+                    <li 
+                    key={index} 
+                    className="bg-gray-800 h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
+                      <span className="text-highlightColor">{item.duration}</span>
+                      <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">{item.degree}</h3>
+                      <div className="flex items-center gap-3">
+                        {/* dot */}
+                        <span className=" w-[6px] h-[6px] rounded-full bg-importantColor"></span>
+                        <p className="text-textColor-secondary">{item.institution}</p>
+                      </div>
+                    </li>
+                    )
+                  })}
+                  </ul>
+                </ScrollArea>
+              </div>
             </TabsContent>
-            {/* Experience */}
-            <TabsContent value="skills" className="w-full">
-              skills
+
+            {/* skills */}
+            <TabsContent value="skills" className="w-full h-full">
+              <div className="flex flex-col gap-[30px]">
+                <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                  <h3 className="text-4xl font-bold">{skills.title}</h3>
+                  <p className="max-w-[600px] text-textColor-secondary mx-auto xl:mx-0">{skills.description}</p>
+                </div>
+                <ScrollArea className="h-[400px]">
+                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
+                  {skills.skillList.map((skill, index)=>{
+                    return(
+                      <li key={index}>
+                        <TooltipProvider delayDuration={100}>
+                          <Tooltip>
+                            <TooltipTrigger className="w-full h-[150px] bg-gray-800 justify-center items-center group rounded-xl flex">
+                              <div className="text-6xl group-hover:text-highlightColor transition-all duration-300">{skill.icon}</div>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                              <p className="capitalize">{skill.name}</p>
+                            </TooltipContent>
+                          </Tooltip>
+                        </TooltipProvider>
+                      </li>
+                    )
+                  })}
+                </ul>
+                </ScrollArea>
+              </div>
             </TabsContent>
-            {/* Experience */}
-            <TabsContent value="about" className="w-full">
-              about
+            {/* about */}
+            <TabsContent value="about" className="w-full text-center xl:text-left">
+                <div className="flex flex-col gap-[30px]">
+                  <h3 className="text-4xl font-bold">{about.title}</h3>
+                  <p className="max-w-[600px] text-textColor-secondary mx-auto xl:mx-0">{about.description}</p>
+                  <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
+                    {about.info.map((item, index) =>{
+                      return(
+                        <li key={index} className="flex items-center justify-center xl:justify-start gap-4">
+                          <span className="text-textColor-secondary">{item.fieldName}</span>
+                          <span className="text-xl">{item.fieldValue}</span>
+                        </li>
+                      )
+                    })}
+                  </ul>
+                </div>
             </TabsContent>
 
           </div>
@@ -231,4 +297,4 @@ const resume = () => {
   )
 }
 
-export default resume
+export default Resume
