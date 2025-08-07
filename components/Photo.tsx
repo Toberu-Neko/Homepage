@@ -9,12 +9,12 @@ const Photo = () => {
         <motion.div initial={{opacity: 0}} animate={{opacity:1 , transition: {delay:1.2, duration: 0.4, ease: "easeIn"}}}>
           {/*Image*/}
             <motion.div initial={{opacity: 0}} animate={{opacity:1 , transition: {delay:1.4, duration: 0.4, ease: "easeInOut"}}}
-            className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute">
-                <Image src="/assets/photo.png" priority quality={100} fill alt="" className="object-contain"/>
+            className="w-[298px] h-[298px] xl:w-[450px] xl:h-[450px] mix-blend-lighten absolute">
+                <Image src="/assets/logo.png" priority quality={100} fill alt="" className="object-contain"/>
             </motion.div>
           
           {/* circle */}
-          <motion.svg className="w-[300px] xl:w-[506px] h-[300px] xl:h-[506px]" 
+          <motion.svg className="w-[300px] xl:w-[456px] h-[300px] xl:h-[456px]" 
           fill="transparent"
           viewBox="0 0 506 506"
           xmlns="http://www.w3.org/2000/svg"

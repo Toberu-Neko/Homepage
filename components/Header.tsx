@@ -4,6 +4,7 @@ import { Button } from './ui/button'
 // Components
 import Nav from './Nav'
 import MobileNav from './MobileNav'
+import Image from 'next/image'
 
 const Header = () => {
   return ( 
@@ -11,9 +12,12 @@ const Header = () => {
         <div className="container mx-auto flex justify-between items-center">
             {/*LOGO*/}
             <Link href='/'>
-                <h1 className='text-4xl font-semibold'>
-                    Toberuneko<span className= 'text-importantColor'>.</span>
-                </h1>
+                <div className='w-[64px] h-[64px] relative'>
+                  <Image src="/assets/photo.png" priority quality={100} fill alt=""/>
+                </div>
+                {/*<h1 className='text-4xl font-semibold'>
+                    Toberuneko  <span className= 'text-importantColor'></span>
+                </h1>*/}
             </Link>
 
             {/*Desktop Nav*/}
